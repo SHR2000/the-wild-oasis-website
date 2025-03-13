@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# The Wild Oasis Website
+
+## Description
+
+This web application is a luxury cabin reservation platform designed for booking exclusive, high-end cabin accommodations. Built with Next.js and React, it provides a seamless and luxurious booking experience with an elegant, user-friendly interface. The app integrates Supabase for backend services and uses Auth.js for secure Google Authentication, allowing users to sign in effortlessly with their Google accounts.
+
+To make the reservation process even smoother, React Day Picker offers an interactive, customizable date picker for easy check-in and check-out date selection. The UI is beautifully styled using Tailwind CSS, ensuring it’s not only responsive but also visually appealing and in line with the luxurious aesthetic of the cabins.
+
+## Technologies Used
+
+- **Next.js**: A React framework for building static and dynamic web applications.
+- **Supabase**: For backend services such as database management.
+- **Date-fns**: A modern JavaScript date utility library for date manipulation.
+- **React Day Picker**: A flexible and customizable date picker for React.
+- **Tailwind CSS**: A utility-first CSS framework for creating custom designs.
+- **Heroicons**: A set of free, open-source SVG icons for use with React.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Ensure you have the following installed:
+
+- Node.js (preferably v14 or higher)
+- npm or yarn
+
+### Installation
+
+First, Clone this repository to your local machine:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/SHR2000/the-wild-oasis-website.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Second, navigate to the project directory:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+cd the-wild-oasis-website
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Third, install dependencies:
 
-## Learn More
+```bash
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+or, if you prefer yarn:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+yarn install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Configuration
 
-## Deploy on Vercel
+First, create a `.env.local` file in the root directory of your project to store environment variables.
+Then Add the following environment variables to the file:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```ini
+# Supabase Configuration
+SUPABASE_URL=your-supabase-url
+SUPABASE_KEY=your-service-role-key  # Keep this secret, do not expose it on the frontend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Authentication Configuration
+AUTH_URL=your-auth-url
+AUTH_SECRET=your-auth-secret
+AUTH_GOOGLE_ID=your-google-client-id
+AUTH_GOOGLE_SECRET=your-google-client-secret
+```
