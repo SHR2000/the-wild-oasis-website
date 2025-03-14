@@ -1,5 +1,9 @@
 # The Wild Oasis Website
 
+## Live Demo
+
+You can view the live version of the app here: [https://the-wild-oasis-website-my.vercel.app/]
+
 ## Description
 
 This web application is a luxury cabin reservation platform designed for booking exclusive, high-end cabin accommodations. Built with Next.js and React, it provides a seamless and luxurious booking experience with an elegant, user-friendly interface. The app integrates Supabase for backend services and uses Auth.js for secure Google Authentication, allowing users to sign in effortlessly with their Google accounts.
