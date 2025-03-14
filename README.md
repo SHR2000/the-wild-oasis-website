@@ -25,7 +25,7 @@ To make the reservation process even smoother, React Day Picker offers an intera
 
 Ensure you have the following installed:
 
-- Node.js (preferably v14 or higher)
+- Node.js (preferably v22 or higher)
 - npm or yarn
 
 ### Installation
