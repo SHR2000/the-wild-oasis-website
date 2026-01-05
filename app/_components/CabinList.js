@@ -5,6 +5,7 @@ import { unstable_noStore as noStore } from "next/cache";
 export default async function CabinList({ filter }) {
   // noStore();
   const cabins = await getCabins();
+  console.log(cabins);
 
   if (!cabins.length) return null;
 
