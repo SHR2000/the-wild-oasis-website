@@ -10,7 +10,7 @@ const authConfig = {
     }),
   ],
   callbacks: {
-    authorized({ auth, rquest }) {
+    authorized({ auth, request }) {
       return !!auth?.user;
 
       // The above code does the same thing as below

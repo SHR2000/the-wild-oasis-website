@@ -3,6 +3,7 @@ import Image from "next/image";
 import image1 from "@/public/about-1.jpg";
 import image2 from "@/public/about-2.jpg";
 import { getCabins } from "../_lib/data-service";
+import Link from "next/link";
 
 export const revalidate = 86400;
 
@@ -45,7 +46,7 @@ export default async function Page() {
       <div className="col-span-2">
         <Image
           src={image1}
-          alt="Family sitting around a fire pit in front of cabin"
+          alt="Family sitting around a fire pit in front of a cabin"
           placeholder="blur"
           quality={80}
         />
@@ -82,12 +83,13 @@ export default async function Page() {
           </p>
 
           <div>
-            <a
+            <Link
               href="/cabins"
+              target="_blank"
               className="inline-block mt-4 bg-accent-500 px-8 py-5 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all"
             >
               Explore our luxury cabins
-            </a>
+            </Link>
           </div>
         </div>
       </div>
