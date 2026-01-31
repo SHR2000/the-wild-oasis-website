@@ -32,14 +32,15 @@ function SideNavigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="border-r border-primary-900">
-      <ul className="flex flex-col gap-2 h-full text-lg">
-        {navLinks.map((link) => (
+    // It is because of this line that is causing it
+    <nav className={`min-1024:border-r min-1024:border-primary-900`}>
+      <ul className="grid h-full grid-cols-2 grid-rows-2 text-base min-512:gap-2 min-512:text-lg min-768:flex min-768:justify-center min-1024:flex-col">
+        {navLinks.map((link, i) => (
           <li key={link.name}>
             <Link
-              className={`py-3 px-5 hover:bg-primary-900 hover:text-primary-100 transition-colors flex items-center gap-4 font-semibold text-primary-200 ${
+              className={`flex items-center gap-4 px-5 py-3 font-semibold text-primary-200 transition-colors hover:bg-primary-900 hover:text-primary-100 ${
                 pathname === link.href ? "bg-primary-900" : ""
-              }`}
+              } `}
               href={link.href}
             >
               {link.icon}

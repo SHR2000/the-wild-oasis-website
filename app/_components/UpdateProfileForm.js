@@ -10,13 +10,13 @@ function UpdateProfileForm({ guest, children }) {
   return (
     <form
       action={updateGuest}
-      className="bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col"
+      className="flex flex-col gap-6 bg-primary-900 px-12 py-8 text-lg"
     >
       <div className="space-y-2">
         <label>Full name</label>
         <input
           disabled
-          className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm disabled:cursor-not-allowed disabled:bg-gray-600 disabled:text-gray-400"
+          className="w-full rounded-sm bg-primary-200 px-5 py-3 text-primary-800 shadow-sm disabled:cursor-not-allowed disabled:bg-gray-600 disabled:text-gray-400"
           defaultValue={fullName}
           name="fullName"
         />
@@ -26,7 +26,7 @@ function UpdateProfileForm({ guest, children }) {
         <label>Email address</label>
         <input
           disabled
-          className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm disabled:cursor-not-allowed disabled:bg-gray-600 disabled:text-gray-400"
+          className="w-full rounded-sm bg-primary-200 px-5 py-3 text-primary-800 shadow-sm disabled:cursor-not-allowed disabled:bg-gray-600 disabled:text-gray-400"
           defaultValue={email}
           name="email"
         />
@@ -36,11 +36,13 @@ function UpdateProfileForm({ guest, children }) {
         <div className="flex items-center justify-between">
           <label htmlFor="nationality">Where are you from?</label>
           <div>
-            <img
-              src={countryFlag}
-              alt="Country flag"
-              className="h-5 rounded-sm"
-            />
+            {countryFlag && (
+              <img
+                src={countryFlag}
+                alt="Country flag"
+                className="h-5 rounded-sm"
+              />
+            )}
           </div>
         </div>
         {children}
@@ -51,11 +53,11 @@ function UpdateProfileForm({ guest, children }) {
         <input
           defaultValue={nationalID}
           name="nationalID"
-          className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+          className="w-full rounded-sm bg-primary-200 px-5 py-3 text-primary-800 shadow-sm"
         />
       </div>
 
-      <div className="flex justify-end items-center gap-6">
+      <div className="flex items-center justify-end gap-6">
         <SubmitButton pendingLabel="Updating...">Update profile</SubmitButton>
       </div>
     </form>

@@ -15,13 +15,13 @@ export default async function CabinList({ filter }) {
     displayCabins = cabins.filter((cabin) => cabin.maxCapacity <= 3);
   if (filter === "medium")
     displayCabins = cabins.filter(
-      (cabin) => cabin.maxCapacity >= 4 && cabin.maxCapacity <= 7
+      (cabin) => cabin.maxCapacity >= 4 && cabin.maxCapacity <= 7,
     );
   if (filter === "large")
     displayCabins = cabins.filter((cabin) => cabin.maxCapacity >= 8);
 
   return (
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 xl:gap-14">
+    <div className="min-640:grid-cols-1 min-1024:grid-cols-2 min-1024:gap-12 min-1280:gap-14 grid gap-8">
       {displayCabins.map((cabin) => (
         <CabinCard cabin={cabin} key={cabin.id} />
       ))}
