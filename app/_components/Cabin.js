@@ -7,8 +7,8 @@ function Cabin({ cabin }) {
     cabin;
 
   return (
-    <div className="grid grid-cols-[3fr_4fr] gap-20 border border-primary-800 py-3 px-10 mb-24">
-      <div className="relative scale-[1.15] -translate-x-3">
+    <div className="mb-24 flex flex-col gap-10 border border-primary-800 min-1024:grid min-1024:grid-cols-[3fr_4fr] min-1280:gap-20 min-1280:px-10 min-1280:py-3">
+      <div className="relative aspect-square h-auto w-full min-1280:-translate-x-3 min-1280:scale-[1.15]">
         <Image
           src={image}
           alt={`Cabin ${name}`}
@@ -17,32 +17,32 @@ function Cabin({ cabin }) {
         />
       </div>
 
-      <div>
-        <h3 className="text-accent-100 font-black text-7xl mb-5 translate-x-[-254px] bg-primary-950 p-6 pb-1 w-[150%]">
+      <div className="px-5 py-3 min-1280:px-0 min-1280:py-0">
+        <h3 className="mb-5 bg-primary-950 pb-1 text-5xl font-black text-accent-100 min-512:text-6xl min-768:text-7xl min-1280:w-[150%] min-1280:translate-x-[-254px] min-1280:p-6">
           Cabin {name}
         </h3>
 
-        <p className="text-lg text-primary-300 mb-10">
+        <p className="mb-10 text-base text-primary-300 min-768:text-lg">
           <TextExpander>{description}</TextExpander>
         </p>
 
-        <ul className="flex flex-col gap-4 mb-7">
-          <li className="flex gap-3 items-center">
+        <ul className="mb-7 flex flex-col gap-4">
+          <li className="flex items-center gap-3">
             <UsersIcon className="h-5 w-5 text-primary-600" />
-            <span className="text-lg">
+            <span className="text-base min-768:text-lg">
               For up to <span className="font-bold">{maxCapacity}</span> guests
             </span>
           </li>
-          <li className="flex gap-3 items-center">
+          <li className="flex items-center gap-3">
             <MapPinIcon className="h-5 w-5 text-primary-600" />
-            <span className="text-lg">
+            <span className="text-base min-768:text-lg">
               Located in the heart of the{" "}
               <span className="font-bold">Dolomites</span> (Italy)
             </span>
           </li>
-          <li className="flex gap-3 items-center">
+          <li className="flex items-center gap-3">
             <EyeSlashIcon className="h-5 w-5 text-primary-600" />
-            <span className="text-lg">
+            <span className="text-base min-768:text-lg">
               Privacy <span className="font-bold">100%</span> guaranteed
             </span>
           </li>

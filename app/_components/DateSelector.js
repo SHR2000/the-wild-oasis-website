@@ -15,7 +15,7 @@ function isAlreadyBooked(range, datesArr) {
     range.from &&
     range.to &&
     datesArr.some((date) =>
-      isWithinInterval(date, { start: range.from, end: range.to })
+      isWithinInterval(date, { start: range.from, end: range.to }),
     )
   );
 }
@@ -33,9 +33,15 @@ function DateSelector({ cabin, bookedDates, settings }) {
   const { minBookingLength, maxBookingLength } = settings;
 
   return (
-    <div className="flex flex-col justify-between">
+    <div className="w- flex flex-col justify-between gap-4 min-1024:gap-0">
       <DayPicker
-        className="pt-12 place-self-center"
+        className="place-self-center justify-self-center pt-4 min-1024:pt-12"
+        classNames={{
+          month: "mx-0",
+          months: "flex flex-col min-512:flex-row min-640:gap-8 gap-8",
+          cell: "min-640:h-8 min-640:w-8 min-512:h-7 min-512:w-7 w-8 h-8 ",
+          day: "min-640:h-7 min-640:w-7 min-512:h-6 min-512:w-6 w-7 h-7",
+        }}
         mode="range"
         onSelect={setRange}
         selected={displayRange}
@@ -52,13 +58,13 @@ function DateSelector({ cabin, bookedDates, settings }) {
         }
       />
 
-      <div className="flex items-center justify-between px-8 bg-accent-500 text-primary-800 h-[72px]">
+      <div className="flex h-[72px] items-center justify-between bg-accent-500 px-8 text-primary-800">
         <div className="flex items-baseline gap-6">
-          <p className="flex gap-2 items-baseline">
+          <p className="flex items-baseline gap-2">
             {discount > 0 ? (
               <>
                 <span className="text-2xl">${regularPrice - discount}</span>
-                <span className="line-through font-semibold text-primary-700">
+                <span className="font-semibold text-primary-700 line-through">
                   ${regularPrice}
                 </span>
               </>
@@ -82,7 +88,7 @@ function DateSelector({ cabin, bookedDates, settings }) {
 
         {range.from || range.to ? (
           <button
-            className="border border-primary-800 py-2 px-4 text-sm font-semibold"
+            className="border border-primary-800 px-4 py-2 text-sm font-semibold"
             onClick={resetRange}
           >
             Clear

@@ -13,6 +13,7 @@ module.exports = {
         "min-512": { min: "32rem" },
         "min-640": { min: "40rem" },
         "min-768": { min: "48rem" },
+        "min-896": { min: "56rem" },
         "min-1024": { min: "64rem" },
         "min-1280": { min: "80rem" },
       },
